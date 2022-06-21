@@ -8,6 +8,9 @@
 <a href="https://github.com/jonghyeok98">
   <img src="https://avatars.githubusercontent.com/u/77715064?v=4" width="100">
 </a>
+<a href="https://github.com/losie2">
+  <img src="https://avatars.githubusercontent.com/u/77715064?v=4" width="100">
+</a>
 </p>
 
 ---
@@ -24,6 +27,6 @@
 ---
 
 ## 📚 학습 주제
-
+-[Window_IOCP_Introduce](./study/Window_IOCP.md)
 
 
