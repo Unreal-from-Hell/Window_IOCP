@@ -9,7 +9,7 @@
   <img src="https://avatars.githubusercontent.com/u/77715064?v=4" width="100">
 </a>
 <a href="https://github.com/losie2">
-  <img src="https://avatars.githubusercontent.com/u/77715064?v=4" width="100">
+  <img src="https://avatars.githubusercontent.com/u/75438820?v=4" width="100">
 </a>
 </p>
 
