@@ -87,7 +87,7 @@ Web Server는 단순히 게임에 국한되지 않고 웹 서비스를 만드는
 
 
 
-<img src="../Images/IOCP_introduce/Sync_IO.PNG" width="500"/> 
+<img src="./Images/IOCP_introduce/Sync_IO.PNG" width="500"/> 
 
 
 
@@ -99,7 +99,7 @@ non-blocking + asynchronous를 응용한 모델
 
 * 데이터 전송이 끝날 때 완료했음을 event를 발생시켜 알린다.
 
-<img src="../Images/IOCP_introduce/Overlapped.png" width="500"/> 
+<img src="./Images/IOCP_introduce/Overlapped.png" width="500"/> 
 
 
 ### 위 그림과 같이 하나의 스레드 내에 동시에 2개 이상의 데이터 전송을 중첩시키는 방법이다.
@@ -113,7 +113,7 @@ non-blocking + asynchronous를 응용한 모델
 > * 소켓이 포트가 특정 서비스로 데이터 입출력을 전달하기 위한 객체이다
 
 
-<img src="../Images/IOCP_introduce/IOCP.png" width="500"/> 
+<img src="./Images/IOCP_introduce/IOCP.png" width="500"/> 
 
 
 * 입출력이 완료되면 CP(Completion Queue)에 완료 보고가 쌓인다.
@@ -130,7 +130,7 @@ non-blocking + asynchronous를 응용한 모델
 ### 1. CreateIoCompletionPort()
 
 
-<img src="../Images/IOCP_introduce/CreateCompletionPort.png" width="500"/> 
+<img src="./Images/IOCP_introduce/CreateCompletionPort.png" width="500"/> 
 
 위 함수는 2가지 용도로 사용된다
 
@@ -152,7 +152,7 @@ non-blocking + asynchronous를 응용한 모델
 ### 2. GetQueuedCompletionStatus()
 IOCP의 I/O completion queue에서 데이터가 입력될 때까지 대기
 
-<img src="../Images/IOCP_introduce/GetQueuedCompletionStatus.png" width="500"/> 
+<img src="./Images/IOCP_introduce/GetQueuedCompletionStatus.png" width="500"/> 
 
 
 > * CompletionPort: 완료된 I/O 정보가 등록된 CP Object에 handle 전달
@@ -166,7 +166,7 @@ IOCP의 I/O completion queue에서 데이터가 입력될 때까지 대기
 
 사용자가 I/O completion queue를 입력한 것 처럼 메세지를 전송
 
-<img src="../Images/IOCP_introduce/PostQueuedCompletionStatus.png" width="500"/> 
+<img src="./Images/IOCP_introduce/PostQueuedCompletionStatus.png" width="500"/> 
 
 
 직접 IOCP Queue에 메세지를 전달하는 함수
@@ -181,7 +181,7 @@ IOCP의 I/O completion queue에서 데이터가 입력될 때까지 대기
 
 I/O 커널 오브젝트가 생성되면 아래와 같은 5개의 서로 다른 데이터 구조가 생성
 
-<img src="../Images/IOCP_introduce/Object.png" width="700"/> 
+<img src="./Images/IOCP_introduce/Object.png" width="700"/> 
 
 
 # IOCP 내부 동작 방식
@@ -191,7 +191,7 @@ I/O 커널 오브젝트가 생성되면 아래와 같은 5개의 서로 다른 �
 
 CreateIoCompletionPort를 사용해서 커널 오브젝트를 생성하고 그림과 같이 IOCP 커널 오브젝트가 생성된다.
 
-<img src="../Images/IOCP_introduce/ObjectCreate.png" width="500"/> 
+<img src="./Images/IOCP_introduce/ObjectCreate.png" width="500"/> 
 
 
 ## IOCP와 디바이스 연결 작업
@@ -199,7 +199,7 @@ CreateIoCompletionPort를 사용해서 커널 오브젝트를 생성하고 그�
 CreateIoCompletionPort를 사용해서 IOCP와 디바이스를 연동하고 내부적으로는 디바이스 핸들과 completionKey로 항목이 장치 리스트 데이터 구조에 삽입된다.
 > 이후에는 연동된 디바이스의 비동기 I/O의 완료통지를 IOCP가 전달 받을 수 있다
 
-<img src="../Images/IOCP_introduce/ObjectConnect.png" width="500"/> 
+<img src="./Images/IOCP_introduce/ObjectConnect.png" width="500"/> 
 
 
 
@@ -207,7 +207,7 @@ CreateIoCompletionPort를 사용해서 IOCP와 디바이스를 연동하고 내�
 
  스레드에서 GetQueuedCompletionStatus 함수를 호출했는데 I/O CompletionQueue에 데이터가 없다면 해당 스레드는 대기 상태로 전환되는데 이때에 IOCP 커널 오브젝트의 대기 스레드 큐에 스레드 ID가 추가된다.
 
-<img src="../Images/IOCP_introduce/funCall.png" width="500"/> 
+<img src="./Images/IOCP_introduce/funCall.png" width="500"/> 
 
 
 ## 비동기 I/O 작업 완료시 처리
@@ -215,7 +215,7 @@ CreateIoCompletionPort를 사용해서 IOCP와 디바이스를 연동하고 내�
 디바이스에 대한 비동기 I/O 요청이 완료되면 시스템은 디바이스와 연계된 IOCP가 있는지 확인한다.
 만일 연동된 IOCP가 있다면 완료 통지를 I/O completion queue에 넣어준다.
 
-<img src="../Images/IOCP_introduce/Complete_IO.png" width="500"/> 
+<img src="./Images/IOCP_introduce/Complete_IO.png" width="500"/> 
 
 
 ## I/O Completion Queue 처리 방법
@@ -225,7 +225,7 @@ CreateIoCompletionPort를 사용해서 IOCP와 디바이스를 연동하고 내�
 > 만약 완료 통지가 자주 발생되지 않는다면 하나의 스레드(Top)를 통해서 모든 통지를 처리 할 수 있다.
 > * 다른 스레드의 리소스를 아낄 수 있음(스레드의 메모리를 Swap out, 프로세서의 캐시 지원)
 
-<img src="../Images/IOCP_introduce/QueueProcedure.png" width="500"/> 
+<img src="./Images/IOCP_introduce/QueueProcedure.png" width="500"/> 
 
 
  ## PostQueuedCompletionStatus 함수 호출시
@@ -233,7 +233,7 @@ CreateIoCompletionPort를 사용해서 IOCP와 디바이스를 연동하고 내�
  I/O Completion Queue에 데이터를 삽입
 
 
-<img src="../Images/IOCP_introduce/funCall1.png" width="500"/> 
+<img src="./Images/IOCP_introduce/funCall1.png" width="500"/> 
 
 
 ## 일시 정지 스레드 리스트 관리
@@ -242,6 +242,6 @@ CreateIoCompletionPort를 사용해서 IOCP와 디바이스를 연동하고 내�
 IOCP는 릴리즈 스레드 리스트의 개수를 동시 수행 가능한 스레드 수만큼 유지 하려고 하기 때문에 대기스레드 큐에서 스레드를 깨워 릴리즈 스레드 리스트로 가져와 수행한다.   
 일시 정지된 스레드가 대기 상태에서 다시 수행 상태로 변경되면 다시 릴리즈 스레드 리스트로 옮겨진다.
 
-<img src="../Images/IOCP_introduce/PauseThread.png" width="500"/> 
+<img src="./Images/IOCP_introduce/PauseThread.png" width="500"/> 
 
 
