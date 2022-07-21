@@ -11,12 +11,6 @@
 <a href="https://github.com/iamgyu">
   <img src="https://avatars.githubusercontent.com/u/11960250?v=4" width="100">
 </a>
-<a href="https://github.com/hsa6283">
-  <img src="https://avatars.githubusercontent.com/u/80310260?v=4" width="100">
-</a>
-<a href="https://github.com/losie2">
-  <img src="https://avatars.githubusercontent.com/u/75438820?v=4" width="100">
-</a>
 <a href="https://github.com/juhanpark">
   <img src="https://avatars.githubusercontent.com/u/108555247?v=4" width="100">
 </a>
@@ -31,12 +25,23 @@
 - Pull Request 방식을 사용합니다.
 - branch는 master만 사용합니다.
 - 모든 문서는 마크다운 형식을 이용하여 작성합니다.
-- Repo에 공유는 일요일까지 완료합니다.
+- Repo에 공유는 토요일까지 완료합니다.
 - 매주 스터디 발표를 합니다.
 
 ---
 
 ## 📚 학습 주제
--[Window_IOCP_Introduce](./study/Window_IOCP.md)
+
+### [이종혁](./contents/이종혁)
+* [Window_IOCP_Introduce](./contents/이종혁/Window_IOCP.md)
+
+
+### [박주한](./contents/박주한)
+
+### [김동규](./contents/김동규)
+
+### [이민규](./contents/이민규)
+
+
 
 
