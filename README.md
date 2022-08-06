@@ -8,11 +8,11 @@
 <a href="https://github.com/jonghyeok98">
   <img src="https://avatars.githubusercontent.com/u/77715064?v=4" width="100">
 </a>
-<a href="https://github.com/iamgyu">
-  <img src="https://avatars.githubusercontent.com/u/11960250?v=4" width="100">
-</a>
 <a href="https://github.com/juhanpark">
   <img src="https://avatars.githubusercontent.com/u/108555247?v=4" width="100">
+</a>
+<a href="https://github.com/UnrealFactory">
+  <img src="https://avatars.githubusercontent.com/u/110706482?v=4" width="100">
 </a>
 </p>
 
@@ -37,8 +37,6 @@
 
 
 ### [박주한](./contents/박주한)
-
-### [김동규](./contents/김동규)
 
 ### [이민규](./contents/이민규)
 
